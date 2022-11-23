@@ -1,0 +1,22 @@
+package cl.gargolas.web.models;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+@Entity
+@Table(name="lugaresInteres")
+public class lugar {
+	private Integer idReporte;
+	private Integer idCategoria;
+	@Column(updatable = false)
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private Date createdAt;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private Date updatedAt;
+
+}

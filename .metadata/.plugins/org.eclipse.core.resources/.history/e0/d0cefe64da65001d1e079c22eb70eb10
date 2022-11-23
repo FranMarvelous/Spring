@@ -1,0 +1,40 @@
+package cl.generation.web.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import cl.generation.web.models.Usuario;
+import cl.generation.web.repositories.UsuarioRepository;
+
+@Service
+public class UsuarioServiceImpl implements UsuarioService {
+//Aquí realizamos la lógica de negocio del sist web
+//se implementan metodos definidos en la interfaz
+	@Autowired
+	private UsuarioRepository usuarioRepository;
+
+	// GUARDAR USUARIO
+	@Override
+	public Usuario guardarUsuario(Usuario usuario) {
+
+		return usuarioRepository.save(usuario);
+	}
+
+	// ELIMINAR USUARIO
+	@Override
+	public String eliminarUsuario(Long id) {
+		Boolean existe = usuarioRepository.existsById(id);
+		if (existe) {
+		//elimino el usuario pasando el id (pk)
+			usuarioRepository.deleteById(id);
+		}else{
+			return "Usuario no existe en la tabla";
+		}
+		existe = usuarioRepository.existsById(id);
+		// si es distinto de nulo, no fue eliminado
+		if (existe) {
+			return "Usuario no eliminado";
+		}
+		return "El usuario fue eliminado";
+	}
+}

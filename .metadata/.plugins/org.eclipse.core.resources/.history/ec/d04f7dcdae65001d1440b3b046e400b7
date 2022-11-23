@@ -1,0 +1,33 @@
+package cl.gargolas.web.models;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="tamanios")
+public class Tamanio {
+	private Integer idTamanio;
+	private String descripcion;
+	
+	public Tamanio() {
+		super();
+	}
+
+	public Integer getIdTamanio() {
+		return idTamanio;
+	}
+
+	public void setIdTamanio(Integer idTamanio) {
+		this.idTamanio = idTamanio;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	
+
+}

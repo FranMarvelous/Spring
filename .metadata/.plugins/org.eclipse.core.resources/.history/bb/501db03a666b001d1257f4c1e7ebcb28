@@ -1,0 +1,6 @@
+package cl.generation.api;
+upackage cl.generation.api;
+
+public class JwtAuthenticationController {
+
+}

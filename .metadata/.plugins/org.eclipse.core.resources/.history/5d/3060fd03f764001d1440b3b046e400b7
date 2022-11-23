@@ -1,0 +1,20 @@
+package cl.generation.web.api;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UsuarioApiRestController {
+
+	@RequestMapping("/guardar/usuario")
+	public String guardarUsuario(@RequestBody Usuario usuario) {
+		/*
+		 * {
+		 * nombre:"Mijail",
+		 * correo:"a@a.cl",
+		 * password: "secret"
+		 * }
+		 */
+		return "";
+	}
+	
+}

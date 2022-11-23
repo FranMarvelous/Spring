@@ -1,0 +1,44 @@
+package cl.generation.web.api;
+
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api")
+public class ApiRestController {
+
+	// http://localhost:8080/api/hola //RUTA FIJA
+	@RequestMapping("/hola")
+	public String hola() {
+		return "hola api";
+	}
+
+	// http://localhost:8080/api/edad/42 //RUTA DINAMICA
+	@RequestMapping("/edad/{edad}")
+	public String rutaDinamica(@PathVariable("edad") int edad) {
+		return "capturando edad:" + edad;
+	}
+
+	// http://localhost:8080/api/nombre/fran
+	@RequestMapping("/nombre/{nombre}")
+	public String capturarNombre(@PathVariable("nombre") String nombre) {
+		return "El nombre capturado es:" + nombre;
+	}
+
+	// http://localhost:8080/api/14/noviembre/2022
+	@RequestMapping("/{dia}/{mes}/{año}")
+	public String capturarFecha(@PathVariable("dia") int dia, @PathVariable("mes") String mes,
+			@PathVariable("año") int año) {
+		return "La fecha capturada es:" + dia + " " + mes + " " + año;
+	}
+	
+	// http://localhost:8080/api?id=--1 ->pasando parametro //peticion tipo GET
+	// http://localhost:8080/api?usuarioId=1
+	@RequestMapping("/usuario") //ruta
+	public String parametro(@RequestParam(value="usuarioId") int id) { //desde request estamos capturando el valor y desde int asignamos TIPODATO
+		return "parametro por get, id número:"+id;
+	}
+	
+}

@@ -1,0 +1,14 @@
+package cl.generation.web.services;
+
+import cl.generation.web.models.Usuario;
+
+public class UsuarioServiceImpl implements UsuarioService {
+
+	//implementar metodo definido en la interfaz
+	@Override
+	public String guardarUsuario(Usuario usuario) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

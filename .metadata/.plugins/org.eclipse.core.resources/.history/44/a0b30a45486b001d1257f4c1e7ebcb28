@@ -1,0 +1,5 @@
+package cl.generation.services;
+
+public interface UserService {
+
+}

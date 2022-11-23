@@ -1,0 +1,25 @@
+package cl.generation.web.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/usuario")
+public class UsuarioController {
+
+	// https://localhost:8080/usuario/index
+	@RequestMapping("/index") //REQUESTMAPPING CREA RUTAS
+	public String index() { //LLAMADO
+		System.out.println("Obtener usuario"); //PRINT
+		return "index.jsp"; //RETORNO
+	}
+	// https://localhost:8080/usuario/home
+	@RequestMapping("/home")
+	public String home() {
+		System.out.println("en el metodo home");
+		return "home";
+	}
+
+
+
+}

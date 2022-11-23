@@ -1,0 +1,5 @@
+package cl.generation.repositories;
+
+public interface UserRepoository {
+
+}
